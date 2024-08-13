@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dn4p5ol23q00t"]
 
 [ext_resource type="Script" path="res://Script/main_ui.gd" id="1_87n4r"]
-[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://REDWING-LIGHT.OTF" id="1_5312c"]
+[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://Assets/REDWING-LIGHT.OTF" id="1_5312c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3s5v"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 1)

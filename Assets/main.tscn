@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctevmeiv5nu5t" path="res://Assets/MenuScreen.png" id="1_82vm7"]
 [ext_resource type="Script" path="res://Script/main.gd" id="1_xkqao"]
-[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://REDWING-LIGHT.OTF" id="2_3046l"]
+[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://Assets/REDWING-LIGHT.OTF" id="2_3046l"]
 [ext_resource type="PackedScene" uid="uid://b4eyarnqhae8m" path="res://Assets/game_controls_panel.tscn" id="3_hxltu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6ec6"]

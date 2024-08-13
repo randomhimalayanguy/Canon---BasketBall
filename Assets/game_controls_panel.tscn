@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4eyarnqhae8m"]
 
-[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://REDWING-LIGHT.OTF" id="1_h5jp3"]
+[ext_resource type="FontFile" uid="uid://287afp8wxi3m" path="res://Assets/REDWING-LIGHT.OTF" id="1_h5jp3"]
 [ext_resource type="Script" path="res://Script/game_controls_panel.gd" id="1_stclc"]
 [ext_resource type="Texture2D" uid="uid://dawc7fabd20jf" path="res://Sprites/arrow_inkscape.png" id="2_tpffc"]
 [ext_resource type="Texture2D" uid="uid://csy4npv8xvbru" path="res://Sprites/arrow_inkscape_progress.png" id="3_bh1gt"]
