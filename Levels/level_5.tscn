@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://6oxpydy6f1fq"]
+
+[ext_resource type="Script" path="res://Script/game_manager.gd" id="1_04tqs"]
+[ext_resource type="PackedScene" uid="uid://c76n48j8so44t" path="res://Levels/level_6.tscn" id="2_b5whx"]
+[ext_resource type="PackedScene" uid="uid://dduddv6vqx38o" path="res://Assets/hoop.tscn" id="2_nbkxj"]
+[ext_resource type="PackedScene" uid="uid://cbcuy2iohxl7r" path="res://Assets/canon.tscn" id="3_4mrg3"]
+[ext_resource type="PackedScene" uid="uid://cbjxs6ww48uid" path="res://Assets/wall.tscn" id="3_lkf2m"]
+[ext_resource type="PackedScene" uid="uid://dn4p5ol23q00t" path="res://Assets/main_ui.tscn" id="4_h5mbg"]
+[ext_resource type="Texture2D" uid="uid://bdpr0mtfchepy" path="res://Assets/background.png" id="7_5kyyp"]
+
+[node name="Level 5" type="Node2D" node_paths=PackedStringArray("hoops", "canon", "ui")]
+script = ExtResource("1_04tqs")
+total_balls = 3
+wait_after_over_time = 4
+hoops = NodePath("Hoops")
+canon = NodePath("Canon")
+ui = NodePath("CanvasLayer/MainUI")
+next_level = ExtResource("2_b5whx")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1128, 912)
+rotation = -1.5708
+scale = Vector2(1.7295, 11.9636)
+texture = ExtResource("7_5kyyp")
+region_enabled = true
+region_rect = Rect2(13.9068, 64.0866, 1185.11, 310.253)
+
+[node name="StaticObjects" type="Node" parent="."]
+
+[node name="MainFloor" type="Polygon2D" parent="StaticObjects"]
+position = Vector2(-9.00115, -185.879)
+scale = Vector2(1.00115, 1.09366)
+polygon = PackedVector2Array(1, 287, 895.972, 287, 895.972, 330.889, 804, 382, 760.128, 418.668, 736.156, 484.503, 736.156, 820.989, 1, 820.989)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/MainFloor"]
+
+[node name="Polygon2D4" type="CollisionPolygon2D" parent="StaticObjects/MainFloor/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(1, 287, 895.972, 287, 894.974, 331.804, 804, 382, 760.128, 418.668, 736.156, 484.503, 736.156, 820.989, 1, 820.989)
+
+[node name="BlockerWall" type="Polygon2D" parent="StaticObjects"]
+polygon = PackedVector2Array(896, 320, 864, 320, 864, 576, 896, 576)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/BlockerWall"]
+
+[node name="BlockerWall2" type="CollisionPolygon2D" parent="StaticObjects/BlockerWall/StaticBody2D"]
+polygon = PackedVector2Array(896, 320, 864, 320, 864, 576, 896, 576)
+
+[node name="Wall" parent="StaticObjects" instance=ExtResource("3_lkf2m")]
+position = Vector2(1144, 205)
+scale = Vector2(1.01957, 1.96772)
+
+[node name="Hoops" type="Node" parent="."]
+
+[node name="Hoop" parent="Hoops" instance=ExtResource("2_nbkxj")]
+position = Vector2(784, 424)
+scale = Vector2(-1, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(761, 97)
+
+[node name="Canon" parent="." node_paths=PackedStringArray("ball_holder") instance=ExtResource("3_4mrg3")]
+position = Vector2(643, 66)
+ball_holder = NodePath("../Node2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainUI" parent="CanvasLayer" instance=ExtResource("4_h5mbg")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(598, 259)

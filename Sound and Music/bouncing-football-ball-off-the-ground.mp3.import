@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvfdps3yoi5c2"
+path="res://.godot/imported/bouncing-football-ball-off-the-ground.mp3-5b39fd0e9a671c88c9163cb4c34ba584.mp3str"
+
+[deps]
+
+source_file="res://Sound and Music/bouncing-football-ball-off-the-ground.mp3"
+dest_files=["res://.godot/imported/bouncing-football-ball-off-the-ground.mp3-5b39fd0e9a671c88c9163cb4c34ba584.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

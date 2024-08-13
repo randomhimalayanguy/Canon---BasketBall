@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://coqjqw4i2mw71"]
+
+[ext_resource type="AudioStream" uid="uid://gyjaeopcfq6s" path="res://Sound and Music/upbeat-lo-fi-chill-instrumental-music-royalty-free-195449.mp3" id="1_btwti"]
+
+[node name="BGMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_btwti")
+volume_db = -15.0
+autoplay = true

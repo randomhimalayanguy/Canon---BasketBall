@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://mmdi6ymxxefs"]
+
+[ext_resource type="Texture2D" uid="uid://cbcdjnndntl2q" path="res://BG Sprites/level1_onion.png" id="1_hr5oh"]
+[ext_resource type="PackedScene" uid="uid://c0baxt0s1jb67" path="res://Assets/ball.tscn" id="2_k1qb2"]
+[ext_resource type="PackedScene" uid="uid://dduddv6vqx38o" path="res://Assets/hoop.tscn" id="3_d83qu"]
+
+[node name="Element_Test" type="Node2D"]
+
+[node name="Level1Onion" type="Sprite2D" parent="."]
+position = Vector2(40, 21)
+texture = ExtResource("1_hr5oh")
+
+[node name="Ball" parent="." instance=ExtResource("2_k1qb2")]
+position = Vector2(615, 109)
+
+[node name="Hoop" parent="." instance=ExtResource("3_d83qu")]
+position = Vector2(632, 134)

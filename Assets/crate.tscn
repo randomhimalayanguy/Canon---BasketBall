@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqk5k05d1dpkq"]
+
+[ext_resource type="Texture2D" uid="uid://cnuwwygy4neps" path="res://Sprites/crate2png.png" id="1_2jj56"]
+
+[node name="Crate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2jj56")
+region_enabled = true
+region_rect = Rect2(99.121, 295, 683.879, 446.289)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-335, -196, 331, -219, 316, 223, -340, 220)

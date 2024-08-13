@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://blsfqibnxkv24"]
+
+[ext_resource type="Texture2D" uid="uid://boibwvlhp1f5s" path="res://BG Sprites/road_dp_game.png" id="1_e74go"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g353k"]
+size = Vector2(1369, 65)
+
+[node name="Road" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_g353k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e74go")

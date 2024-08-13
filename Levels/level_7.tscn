@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfcwbsjgb1ra3"]
+
+[ext_resource type="Script" path="res://Script/game_manager.gd" id="1_kjbv7"]
+[ext_resource type="PackedScene" uid="uid://dm78soh4wgq18" path="res://Assets/rec_collider.tscn" id="2_b8jdx"]
+[ext_resource type="Texture2D" uid="uid://bdpr0mtfchepy" path="res://Assets/background.png" id="2_s1150"]
+[ext_resource type="PackedScene" uid="uid://cbcuy2iohxl7r" path="res://Assets/canon.tscn" id="3_h6k2y"]
+[ext_resource type="PackedScene" uid="uid://dduddv6vqx38o" path="res://Assets/hoop.tscn" id="4_lyaw4"]
+[ext_resource type="PackedScene" uid="uid://dn824tn4je1cw" path="res://Assets/moving_platform.tscn" id="5_fwklk"]
+[ext_resource type="PackedScene" uid="uid://d0mlxocgocsix" path="res://Assets/rotating_bar.tscn" id="6_aaigr"]
+[ext_resource type="PackedScene" uid="uid://dn4p5ol23q00t" path="res://Assets/main_ui.tscn" id="6_g712u"]
+
+[node name="Level 7" type="Node2D" node_paths=PackedStringArray("hoops", "canon", "ui")]
+script = ExtResource("1_kjbv7")
+total_balls = 8
+wait_after_over_time = 7
+hoops = NodePath("Hoops")
+canon = NodePath("Canon")
+ui = NodePath("CanvasLayer/MainUI")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1003, 474)
+rotation = -1.5708
+scale = Vector2(1.7295, 11.9636)
+texture = ExtResource("2_s1150")
+region_enabled = true
+region_rect = Rect2(13.9068, 64.0866, 1185.11, 310.253)
+
+[node name="Static Objects" type="Node2D" parent="."]
+
+[node name="Floor" parent="Static Objects" instance=ExtResource("2_b8jdx")]
+position = Vector2(-805, 357)
+rotation = -0.00129113
+scale = Vector2(3.61509, 1.61547)
+
+[node name="Floor6" parent="Static Objects" instance=ExtResource("2_b8jdx")]
+position = Vector2(-806, -504)
+rotation = -0.00129113
+scale = Vector2(3.61509, 1.61547)
+
+[node name="Floor2" parent="Static Objects" instance=ExtResource("2_b8jdx")]
+position = Vector2(699, 381)
+rotation = -1.5708
+scale = Vector2(1.85268, 1.32156)
+
+[node name="Floor4" parent="Static Objects" instance=ExtResource("2_b8jdx")]
+position = Vector2(-329, 363)
+rotation = -1.5708
+scale = Vector2(0.967528, 1.13277)
+
+[node name="Floor5" parent="Static Objects" instance=ExtResource("2_b8jdx")]
+position = Vector2(-758, 368)
+rotation = -1.5708
+scale = Vector2(0.375957, 2.63244)
+
+[node name="Ball Holder" type="Node2D" parent="."]
+
+[node name="Canon" parent="." node_paths=PackedStringArray("ball_holder") instance=ExtResource("3_h6k2y")]
+position = Vector2(-679, 141)
+ball_holder = NodePath("../Ball Holder")
+
+[node name="Hoops" type="Node" parent="."]
+
+[node name="MovingPlatform" parent="Hoops" node_paths=PackedStringArray("hoop") instance=ExtResource("5_fwklk")]
+z_index = 1
+position = Vector2(237, 356)
+dis_moving = 335
+move_rate = 0.05
+speed = 8
+wait_at_extreme = 2
+hoop = NodePath("Hoop2")
+
+[node name="Hoop2" parent="Hoops/MovingPlatform" instance=ExtResource("4_lyaw4")]
+position = Vector2(-58, -286)
+rotation = 0.0640366
+
+[node name="RotatingBar" parent="Hoops" node_paths=PackedStringArray("hoop") instance=ExtResource("6_aaigr")]
+position = Vector2(143, -412)
+rotation = 1.5708
+scale = Vector2(0.495713, 0.312093)
+max_deg = 10
+min_deg = 90
+hoop = NodePath("Hoop3")
+
+[node name="Hoop3" parent="Hoops/RotatingBar" instance=ExtResource("4_lyaw4")]
+position = Vector2(526.515, 233.905)
+rotation = -1.5708
+scale = Vector2(3.20447, 2.01726)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-20, -20)
+zoom = Vector2(0.74, 0.74)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainUI" parent="CanvasLayer" instance=ExtResource("6_g712u")]

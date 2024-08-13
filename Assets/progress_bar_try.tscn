@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcadhgljug8cb"]
+
+[ext_resource type="Texture2D" uid="uid://dawc7fabd20jf" path="res://Sprites/arrow_inkscape.png" id="1_hljgt"]
+
+[node name="ProgressBarTry" type="Node2D"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 486.0
+offset_bottom = 155.0
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+value = 30.0
+texture_under = ExtResource("1_hljgt")
+texture_progress = ExtResource("1_hljgt")
+tint_progress = Color(0, 0.862745, 0.862745, 1)

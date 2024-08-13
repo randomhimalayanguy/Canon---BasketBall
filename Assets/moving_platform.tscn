@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn824tn4je1cw"]
+
+[ext_resource type="Script" path="res://Script/moving_platform.gd" id="1_uvnd4"]
+
+[node name="MovingPlatform" type="Node2D" groups=["Wall"]]
+script = ExtResource("1_uvnd4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-39, -197)
+scale = Vector2(3.5563, 98.4465)
+polygon = PackedVector2Array(8.71693, -1.89951, 13.216, -1.89951, 13.216, 2.00109, 8.71693, 2.00109)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-39, -197)
+scale = Vector2(3.5563, 98.4465)
+color = Color(0.823529, 0.819608, 0.819608, 1)
+polygon = PackedVector2Array(8.71693, -1.89951, 13.216, -1.89951, 13.216, 2.00109, 8.71693, 2.00109)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

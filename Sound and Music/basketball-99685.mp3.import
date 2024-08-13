@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtrrusrjk3thq"
+path="res://.godot/imported/basketball-99685.mp3-32b1d785da799d43b75c67a306e4cabd.mp3str"
+
+[deps]
+
+source_file="res://Sound and Music/basketball-99685.mp3"
+dest_files=["res://.godot/imported/basketball-99685.mp3-32b1d785da799d43b75c67a306e4cabd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

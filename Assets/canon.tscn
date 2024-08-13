@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbcuy2iohxl7r"]
+
+[ext_resource type="Script" path="res://Script/canon.gd" id="1_6g1yj"]
+[ext_resource type="Texture2D" uid="uid://d4bnscamdeu6p" path="res://Sprites/canon_barell.png" id="1_oj8og"]
+[ext_resource type="Texture2D" uid="uid://dpxml5ce4d7uw" path="res://Sprites/canon_base.png" id="2_2pb44"]
+[ext_resource type="Texture2D" uid="uid://dawc7fabd20jf" path="res://Sprites/arrow_inkscape.png" id="2_laqqu"]
+[ext_resource type="Texture2D" uid="uid://csy4npv8xvbru" path="res://Sprites/arrow_inkscape_progress.png" id="3_tqoms"]
+
+[node name="Canon" type="Node2D"]
+script = ExtResource("1_6g1yj")
+change_rate = 0.2
+min_power = 40
+max_power = 70
+pts_dis = 20
+total_pts = 17
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Anchor"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_right = 486.0
+offset_bottom = 139.0
+grow_vertical = 2
+scale = Vector2(0.35, 0.3)
+min_value = 20.0
+max_value = 70.0
+step = 5.0
+value = 20.0
+allow_greater = true
+texture_under = ExtResource("2_laqqu")
+texture_progress = ExtResource("3_tqoms")
+tint_progress = Color(1, 0.32549, 0.0352941, 1)
+
+[node name="Barell" type="Sprite2D" parent="Anchor"]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_oj8og")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_2pb44")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

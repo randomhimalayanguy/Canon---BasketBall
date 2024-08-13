@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://fnaob522eka0"]
+
+[ext_resource type="Script" path="res://Script/check_mark.gd" id="1_q3mvq"]
+[ext_resource type="Texture2D" uid="uid://bhn48m27vr0lv" path="res://Sprites/check_mark.png" id="1_x4gii"]
+
+[node name="CheckMark" type="Node2D"]
+script = ExtResource("1_q3mvq")
+
+[node name="CheckMarkSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_x4gii")

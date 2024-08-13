@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://1gwandahd0sg"]
+
+[ext_resource type="PackedScene" uid="uid://ddhuhmi0p1eut" path="res://Scene/ball.tscn" id="1_jvyfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vxo6"]
+size = Vector2(556, 20)
+
+[node name="Main" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_jvyfx")]
+position = Vector2(0, -224)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_2vxo6")
+
+[node name="Camera2D" type="Camera2D" parent="."]

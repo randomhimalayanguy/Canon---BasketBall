@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0baxt0s1jb67"]
+
+[ext_resource type="Texture2D" uid="uid://dbdbeh2c3ewc3" path="res://Sprites/basketBallpng.png" id="1_g6c6g"]
+[ext_resource type="Script" path="res://Script/ball.gd" id="1_vwud2"]
+[ext_resource type="AudioStream" uid="uid://dtrrusrjk3thq" path="res://Sound and Music/basketball-99685.mp3" id="3_m4whp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hl4lv"]
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ps325"]
+radius = 25.0
+
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_hl4lv")
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_vwud2")
+audio_effect_vel = 150
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ps325")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.156)
+texture = ExtResource("1_g6c6g")
+region_enabled = true
+region_rect = Rect2(88, 121.81, 335, 333.892)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m4whp")
+volume_db = 13.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
