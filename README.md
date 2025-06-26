@@ -1,5 +1,5 @@
 
-**Cannon & Basketball**  
+**Cannon & Basketball, [Play here](https://randomhimalayanguy.itch.io/canon-basketball)**  
 A fun, arcade-style game where the goal is to shoot all baskets across 7 engaging levels.
 
 **Controls**  
@@ -20,5 +20,4 @@ RandomHimalayanGuy
 Godot Engine <3  
 
 ![Screenshot 1](https://github.com/user-attachments/assets/5aa801e9-7f12-42bc-bcf4-e696c6ab7f69)  
-
 ![Screenshot 2](https://github.com/user-attachments/assets/b6fed2ac-3ea0-46d8-8779-15cb9274b6ab)  
